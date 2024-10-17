@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<p></p>-->
+<form>
+    <input type="text" name="username">
+</form>
+<!--<button onclick="clickMe()">-->
+<!--    Click-->
+<!--</button>-->
+<script>
+    // function clickMe() {
+    //     const pNode = document.querySelector("p");
+    //     pNode.innerHTML = ("<strong>Hello</strong>");
+    // }
+    //     alert(pNode.innerHTML);
+    const userNameNode = document.querySelector("input[name='username']");
+    userNameNode.addEventListener('blur', function (){
+        console.log("blur", userNameNode.value);
+    })
+</script>
+</body>
+</html>

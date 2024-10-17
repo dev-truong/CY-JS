@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cau7</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    #signup-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+    }
+    #signup-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .field-form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .field-form label {
+      flex: 1;
+      font-weight: bold;
+      align-items: center;
+    }
+    .field-form input {
+      flex: 2;
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .field-button {
+      display: flex;
+      justify-content: center;
+    }
+    .field-button button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .field-button button:hover {
+      background-color: #218838;
+    }
+    .error {
+      color: red;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <form id="signup-form">
+    <h2>Sign Up</h2>
+    <div class="field-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username">
+    </div>
+    <div class="error" id="username-error"></div>
+    <div class="field-form">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+    </div>
+    <div class="error" id="password-error"></div>
+    <div class="field-form">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email">
+    </div>
+    <div class="error" id="email-error"></div>
+    <div class="field-form">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname">
+    </div>
+    <div class="error" id="fullname-error"></div>
+    <div class="field-button">
+      <button onclick="validateForm()">Submit</button>
+    </div>
+  </form>
+</div>
+<script>
+  document.getElementById('signup-form').addEventListener('submit', (event) => {
+    event.preventDefault()
+  })
+
+  function validateForm(){
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value;
+    document.querySelectorAll('.error').forEach(error => error.textContent = '');
+    if(username.length <=5 || username.length >=10) {
+      document.getElementById("username-error").textContent = "Vui long dien vao truong nay";
+    }
+    if(password.length <=5 || password.length >=10) {
+      document.getElementById("password-error").textContent = "Vui long dien vao truong nay";
+    }
+    const reg = /\S+@\S+/;
+    if (!reg.test(email)) {
+      document.getElementById("email-error").textContent = "Vui long dien vao truong nay";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cau8</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        width: 600px;
+        height: 300px;
+        position: relative;
+      }
+      .slide-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .next {
+        right: 0;
+      }
+      .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="slide-image">
+        <img src="https://backstage.vn/storage/2024/07/to-hop-the-thao-giai-tri-ha-long-1023x570.jpg" alt="">
+      </div>
+      <div class="prev" onclick="changeSlide(-1)">&#10094;</div>
+      <div class="next" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+  </div>
+<script>
+  const image = [
+    "https://backstage.vn/storage/2024/07/to-hop-the-thao-giai-tri-ha-long-1023x570.jpg",
+    "https://media.baoquangninh.vn/upload/image/202410/thumbnail/2265349_le_hoi_kinh_khi_cau_thanh_pho_di_san_sac_mau_ha_long_duoc_to_chuc_thanh_cong_vao_dau_thang_9_thu_hut_dong_nguoi_dan_va_du_khach_tham_gia_16485405.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo_RxObMC9xIg6hPoGNx6I0nXLYQ-7mgFQhEtZBBPoGJ7-afu2KO6nzfR1xPsd_S8jNvY&usqp=CAU"
+  ];
+  let index = 0;
+  function changeSlide(reverse) {
+    index = index + reverse;
+    if(index >= image.length) {
+      index = 0;
+    } else if(index < 0) {
+      index = image.length - 1;
+    }
+    document.querySelector("img").src = image[index];
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau4</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<ul>
+
+</ul>
+<button onclick="clickCopy()">Copy</button>
+<script>
+    function clickCopy() {
+        const ulNode = document.querySelector("ul");
+        const clone = ulNode.cloneNode(true);
+        ulNode.nextElementSibling.appendChild(clone);
+    }
+</script>
+</body>
+</html>

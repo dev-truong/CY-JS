@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cau3</title>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<button onclick="clickChange()">Change</button>
+<script>
+  function clickChange() {
+    const ulNode = document.querySelector("ul");
+    const arrLi = Array.from(ulNode.children).reverse();
+    arrLi.forEach((li) => {
+      ulNode.appendChild(li);
+    })
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau1</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <button onclick="clickAdd()">Add</button>
+    <script>
+        function clickAdd() {
+            const ulNode = document.querySelector("ul");
+            console.log(ulNode.lastElementChild);
+            console.log(ulNode.lastChild);
+            const newLi = document.createElement("li");
+            newLi.innerHTML = Number(ulNode.lastElementChild.innerHTML) + 1;
+            ulNode.appendChild(newLi);
+        }
+    </script>
+</body>
+</html>
