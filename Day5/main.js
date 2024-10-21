@@ -10,6 +10,7 @@ fileInput.addEventListener('change', (e) => {
         reader.addEventListener('load', (e) => {
             const url = e.target.result;
             const img = document.createElement('img');
+            const div = document.createElement('div');
             img.src = url;
             img.style.height = '80px';
             img.style.width = '80px';
@@ -18,21 +19,22 @@ fileInput.addEventListener('change', (e) => {
     }
 })
 
-dropArea.addEventListener("drop", (event) => {
-    event.preventDefault();
-    const files = event.dataTransfer.files;
-    handleFiles(files);
-});
-
-function handleFiles(files) {
-    if (files.length > 0) {
-        const file = files[0];
-        reader.readAsDataURL(file);
-        reader.addEventListener("load", (event) => {
-            const url = event.target.result;
-            const img = document.createElement('img');
-            image.src = url;
-            dropArea.appendChild(img);
-        });
-    }
-}
+// dropArea.addEventListener("drop", (event) => {
+//     event.preventDefault();
+//     const files = event.dataTransfer.files;
+//     console.log(files)
+//     handleFiles(files);
+// });
+//
+// function handleFiles(files) {
+//     if (files.length > 0) {
+//         const file = files[0];
+//         reader.readAsDataURL(file);
+//         reader.addEventListener("load", (event) => {
+//             const url = event.target.result;
+//             const img = document.createElement('img');
+//             img.src = url;
+//             dropArea.appendChild(img);
+//         });
+//     }
+// }
