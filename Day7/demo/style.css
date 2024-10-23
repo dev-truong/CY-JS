@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('background.jpg'); /* Add background image if needed */
+    background-size: cover;
+    overflow: hidden;
+}
+
+#basket {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 100px;
+    height: 50px;
+    background-color: brown;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+
+#egg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 40px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: fall 3s infinite linear;
+}
+
+@keyframes fall {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 90vh;
+    }
+}
+
+.score-board {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #333;
+}
